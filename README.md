@@ -1,5 +1,10 @@
 Flox
 ===============
+Fork with automatically enabled https support for use with a reverse proxy like traefik. 
+My use case includes building a [docker image and running through docker](https://github.com/greinet/docker-flox).
+
+
+
 [![Build Status](https://travis-ci.org/devfake/flox.svg?branch=master)](https://travis-ci.org/devfake/flox)
 
 Flox is a self hosted Movie, Series and Animes watch list. It's build on top of Laravel and Vue.js and uses [The Movie Database](https://www.themoviedb.org/) API.
