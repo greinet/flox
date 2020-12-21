@@ -1,8 +1,8 @@
 <?php
-
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\URL;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,9 +13,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+      $this->app['request']->server->set('HTTPS', true);
+      URL::forceScheme('https');
     }
-
     /**
      * Register any application services.
      *
@@ -23,6 +23,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        if (env('APP_ENV') === 'production') {
+           $this->app['request']->server->set('HTTPS', true);
+        }
     }
 }
